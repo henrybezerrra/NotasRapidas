@@ -1,7 +1,9 @@
-package dragonapp.com.br.easynotes;
+package dragonapp.com.br.easynotes.activitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import dragonapp.com.br.easynotes.R;
 
 public class MainActivity extends AppCompatActivity {
 
