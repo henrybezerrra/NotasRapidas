@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                CadastrarNotaActivity.chamaTela(MainActivity.this,nota);
+                CadastrarNotaActivity.chamaTela(MainActivity.this, nota);
 
             }
         });
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dao.deletar(nota.getId());
-                Toast.makeText(MainActivity.this, "Nota "+nota.getNome()+", excluído com sucesso!",
+                Toast.makeText(MainActivity.this, "Nota " + nota.getNome() + ", excluído com sucesso!",
                         Toast.LENGTH_LONG).show();
                 atualizarListaDeNotas();
             }
@@ -62,10 +62,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
-    private void atualizarListaDeNotas(){
+
+    private void atualizarListaDeNotas() {
         NotaDAO dao = new NotaDAO(this);
         ArrayAdapter<Nota> arrayAdapter = new ArrayAdapter<Nota>(this,
                 android.R.layout.simple_list_item_1, dao.listar());
 
         lista.setAdapter(arrayAdapter);
+    }
 }
