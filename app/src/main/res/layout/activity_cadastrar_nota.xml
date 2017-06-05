@@ -16,7 +16,7 @@
         android:textSize="15dp"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName" />
@@ -29,14 +29,14 @@
         android:textSize="15dp"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btSalvar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Salva" />
+        android:text="Salvar" />
 </LinearLayout>
