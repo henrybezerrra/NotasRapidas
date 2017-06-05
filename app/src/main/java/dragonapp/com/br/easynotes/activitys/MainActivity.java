@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         builder.setNegativeButton("Exclir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dao.deletar(Nota.getId());
-                Toast.makeText(MainActivity.this, "Nota "+Nota.getNome()+", excluído com sucesso!",
+                dao.deletar(nota.getId());
+                Toast.makeText(MainActivity.this, "Nota "+nota.getNome()+", excluído com sucesso!",
                         Toast.LENGTH_LONG).show();
                 atualizarListaDeNotas();
             }
