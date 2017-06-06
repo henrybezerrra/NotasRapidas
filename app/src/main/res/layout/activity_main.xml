@@ -19,7 +19,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nova nota"/>
+        android:text="Nova nota"
+        android:id="@+id/btNovaNota"/>
 
 
 </LinearLayout>

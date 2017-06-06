@@ -33,6 +33,7 @@ public class CadastrarNotaActivity extends AppCompatActivity {
 
         if (nota != null) {
             edtNomedaNota.setText(nota.getNome());
+            edtDescricaodaNota.setText(nota.getDescricao());
         }
 
         btSalvarNota.setOnClickListener(new View.OnClickListener() {
