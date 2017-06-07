@@ -6,7 +6,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNovaNota.setOnClickListener(this);
 
         lista = (ListView) findViewById(R.id.lvLista);
+        atualizarListaNota();
         lista.setOnItemClickListener(this);
     }
 
@@ -46,5 +46,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         final Nota nota = (Nota) parent.getAdapter().getItem(position);
         final NotaDAO dao = new NotaDAO(this);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Opções");
+        builder.setMessage("O que deseja fazer?");
+        builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                CadastrarNotaActivity.chamaTela(MainActivity.this,nota);
+
+            }
+        });
+
+        builder.setNegativeButton("Exclir", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dao.deletar(nota.getId());
+                Toast.makeText(MainActivity.this, "Cliente "+nota.getNome()+", excluído com sucesso!",
+                        Toast.LENGTH_LONG).show();
+                atualizarListaNota();
+            }
+        });
+        AlertDialog alert;
+        alert = builder.create();
+        alert.show();
+
+
+    }
+    private void atualizarListaNota(){
+        NotaDAO dao = new NotaDAO(this);
+        ArrayAdapter<Nota> arrayAdapter = new ArrayAdapter<Nota>(this,
+                android.R.layout.simple_list_item_1, dao.listar());
+
+        lista.setAdapter(arrayAdapter);
     }
 }
