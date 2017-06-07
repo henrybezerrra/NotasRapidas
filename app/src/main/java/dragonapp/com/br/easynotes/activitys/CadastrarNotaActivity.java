@@ -13,9 +13,10 @@ import dragonapp.com.br.easynotes.R;
 import dragonapp.com.br.easynotes.dao.Nota;
 import dragonapp.com.br.easynotes.dao.NotaDAO;
 
-public class CadastrarNotaActivity extends AppCompatActivity {
+public class CadastrarNotaActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static Nota nota;
+    private Button buttonListaNota;
     public static void chamaTela(Context context, Nota nota) {
         CadastrarNotaActivity.nota = nota;
         Intent intent = new Intent(context, CadastrarNotaActivity.class);
@@ -30,6 +31,8 @@ public class CadastrarNotaActivity extends AppCompatActivity {
         final EditText edtNomedaNota = (EditText) findViewById(R.id.edtNome);
         final EditText edtDescricaodaNota = (EditText) findViewById(R.id.edtDescricao);
         Button btSalvarNota = (Button) findViewById(R.id.btSalvar);
+        buttonListaNota = (Button) findViewById(R.id.btLNotas);
+        buttonListaNota.setOnClickListener(this);
 
         if (nota != null) {
             edtNomedaNota.setText(nota.getNome());
@@ -63,14 +66,11 @@ public class CadastrarNotaActivity extends AppCompatActivity {
                 }
             }
         });
-
-        /*btListarCidade.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CidadeActivity.this, ListaCidadeActivity.class);
-                startActivity(intent);
-            }
-        });
-    }*/
+    }
+    public void onClick(View v) {
+        if (v == buttonListaNota){
+            Intent i = new Intent(this,MainActivity.class);
+            startActivity(i);
+        }
     }
 }

@@ -17,7 +17,7 @@ public abstract class GenericDAO extends SQLiteOpenHelper {
     private String sqlTabelaNota = "CREATE TABLE IF NOT EXISTS nota(" +
             "idnota INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nome VARCHAR(45) NOT NULL," +
-            "descricao VARCHAR(45) NOT NULL," +
+            "descricao VARCHAR(45) NOT NULL" +
             ");";
 
 

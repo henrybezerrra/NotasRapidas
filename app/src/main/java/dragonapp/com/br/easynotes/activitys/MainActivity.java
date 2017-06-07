@@ -17,7 +17,7 @@ import dragonapp.com.br.easynotes.R;
 import dragonapp.com.br.easynotes.dao.Nota;
 import dragonapp.com.br.easynotes.dao.NotaDAO;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView lista;
     private Button buttonNovaNota;
@@ -31,50 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         buttonNovaNota.setOnClickListener(this);
 
         lista = (ListView) findViewById(R.id.lvLista);
-        atualizarListaDeNotas();
         lista.setOnItemClickListener(this);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-        final Nota nota = (Nota) parent.getAdapter().getItem(position);
-        final NotaDAO dao = new NotaDAO(this);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Opções");
-        builder.setMessage("O que deseja fazer?");
-        builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                CadastrarNotaActivity.chamaTela(MainActivity.this,nota);
-
-            }
-        });
-
-        builder.setNegativeButton("Exclir", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dao.deletar(nota.getId());
-                Toast.makeText(MainActivity.this, "Nota " + nota.getNome() + ", excluído com sucesso!",
-                        Toast.LENGTH_LONG).show();
-                atualizarListaDeNotas();
-            }
-        });
-        AlertDialog alert;
-        alert = builder.create();
-        alert.show();
-
-
-    }
-
-    private void atualizarListaDeNotas() {
-        NotaDAO dao = new NotaDAO(this);
-        ArrayAdapter<Nota> arrayAdapter = new ArrayAdapter<Nota>(this,
-                android.R.layout.simple_list_item_1, dao.listar());
-
-        lista.setAdapter(arrayAdapter);
     }
 
     @Override
@@ -83,5 +40,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             Intent i = new Intent(this,CadastrarNotaActivity.class);
             startActivity(i);
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        final Nota nota = (Nota) parent.getAdapter().getItem(position);
+        final NotaDAO dao = new NotaDAO(this);
     }
 }
