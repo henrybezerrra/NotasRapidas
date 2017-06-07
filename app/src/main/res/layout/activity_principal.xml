@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dragonapp.com.br.easynotes.activitys.MainActivity">
+    tools:context="dragonapp.com.br.easynotes.activitys.PrincipalActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

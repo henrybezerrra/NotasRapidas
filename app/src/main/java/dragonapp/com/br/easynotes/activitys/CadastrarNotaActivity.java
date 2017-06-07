@@ -69,7 +69,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
     }
     public void onClick(View v) {
         if (v == buttonListaNota){
-            Intent i = new Intent(this,MainActivity.class);
+            Intent i = new Intent(this,PrincipalActivity.class);
             startActivity(i);
         }
     }

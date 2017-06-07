@@ -16,7 +16,7 @@ import dragonapp.com.br.easynotes.R;
 import dragonapp.com.br.easynotes.dao.Nota;
 import dragonapp.com.br.easynotes.dao.NotaDAO;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class PrincipalActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView lista;
     private Button buttonNovaNota;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_principal);
 
         buttonNovaNota = (Button) findViewById(R.id.btNovaNota);
         buttonNovaNota.setOnClickListener(this);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                CadastrarNotaActivity.chamaTela(MainActivity.this,nota);
+                CadastrarNotaActivity.chamaTela(PrincipalActivity.this,nota);
 
             }
         });
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dao.deletar(nota.getId());
-                Toast.makeText(MainActivity.this, "Nota "+nota.getNome()+", excluído com sucesso!",
+                Toast.makeText(PrincipalActivity.this, "Nota "+nota.getNome()+", excluído com sucesso!",
                         Toast.LENGTH_LONG).show();
                 atualizarListaNota();
             }
