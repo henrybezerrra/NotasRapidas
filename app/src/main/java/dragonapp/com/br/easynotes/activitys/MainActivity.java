@@ -48,8 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final NotaDAO dao = new NotaDAO(this);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Opções");
-        builder.setMessage("O que deseja fazer?");
+        builder.setTitle(nota.getNome());
+        builder.setMessage(nota.getDescricao());
+
         builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
