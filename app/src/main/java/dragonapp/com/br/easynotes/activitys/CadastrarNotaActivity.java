@@ -34,6 +34,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         buttonListaNota = (Button) findViewById(R.id.btLNotas);
         buttonListaNota.setOnClickListener(this);
 
+
         if (nota != null) {
             edtNomedaNota.setText(nota.getNome());
             edtDescricaodaNota.setText(nota.getDescricao());

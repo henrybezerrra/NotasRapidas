@@ -59,7 +59,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
-        builder.setNegativeButton("Exclir", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dao.deletar(nota.getId());
