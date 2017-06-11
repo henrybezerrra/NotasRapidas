@@ -2,13 +2,13 @@ package dragonapp.com.br.easynotes.activitys;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,15 +19,15 @@ import dragonapp.com.br.easynotes.dao.NotaDAO;
 public class PrincipalActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView lista;
-    private Button buttonNovaNota;
+    private FloatingActionButton floatingActionButtonNovaNota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        buttonNovaNota = (Button) findViewById(R.id.btNovaNota);
-        buttonNovaNota.setOnClickListener(this);
+        floatingActionButtonNovaNota = (FloatingActionButton) findViewById(R.id.fabNovaNota);
+        floatingActionButtonNovaNota.setOnClickListener(this);
 
         lista = (ListView) findViewById(R.id.lvLista);
         atualizarListaNota();
@@ -36,7 +36,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if (v == buttonNovaNota){
+        if (v == floatingActionButtonNovaNota){
             Intent i = new Intent(this,CadastrarNotaActivity.class);
             startActivity(i);
         }

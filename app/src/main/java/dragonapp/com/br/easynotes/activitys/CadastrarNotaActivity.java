@@ -2,6 +2,7 @@ package dragonapp.com.br.easynotes.activitys;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,8 @@ import dragonapp.com.br.easynotes.dao.NotaDAO;
 public class CadastrarNotaActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static Nota nota;
-    private Button buttonListaNota;
+    private FloatingActionButton floatingActionButtonSalvarNota;
+    private FloatingActionButton floatingActionButtonTelaPrincipal;
     public static void chamaTela(Context context, Nota nota) {
         CadastrarNotaActivity.nota = nota;
         Intent intent = new Intent(context, CadastrarNotaActivity.class);
@@ -30,9 +32,10 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
 
         final EditText edtNomedaNota = (EditText) findViewById(R.id.edtNome);
         final EditText edtDescricaodaNota = (EditText) findViewById(R.id.edtDescricao);
-        Button btSalvarNota = (Button) findViewById(R.id.btSalvar);
-        buttonListaNota = (Button) findViewById(R.id.btLNotas);
-        buttonListaNota.setOnClickListener(this);
+        floatingActionButtonSalvarNota = (FloatingActionButton) findViewById(R.id.fabSalvar);
+        floatingActionButtonSalvarNota.setOnClickListener(this);
+        floatingActionButtonTelaPrincipal = (FloatingActionButton) findViewById(R.id.fabTelaPrincipal);
+        floatingActionButtonTelaPrincipal.setOnClickListener(this);
 
 
         if (nota != null) {
@@ -40,7 +43,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
             edtDescricaodaNota.setText(nota.getDescricao());
         }
 
-        btSalvarNota.setOnClickListener(new View.OnClickListener() {
+        floatingActionButtonSalvarNota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(edtNomedaNota.getText().toString().isEmpty()||edtDescricaodaNota.getText().toString().isEmpty()){
@@ -69,7 +72,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         });
     }
     public void onClick(View v) {
-        if (v == buttonListaNota){
+        if (v == floatingActionButtonTelaPrincipal){
             Intent i = new Intent(this,PrincipalActivity.class);
             startActivity(i);
         }
