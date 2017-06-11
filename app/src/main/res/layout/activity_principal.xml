@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,18 +10,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ListView
+            android:id="@+id/lvLista"
             android:layout_width="match_parent"
-            android:layout_height="459dp"
-            android:id="@+id/lvLista">
-        </ListView>
+            android:layout_height="459dp"></ListView>
+
     </LinearLayout>
 
-    <Button
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nova nota"
-        android:id="@+id/btNovaNota"/>
+        android:layout_weight="1"
+        android:layout_gravity="bottom|end"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 
 </LinearLayout>
