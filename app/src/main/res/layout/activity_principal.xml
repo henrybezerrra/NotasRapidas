@@ -20,7 +20,7 @@
         android:layout_gravity="bottom|end"
         android:layout_weight="1"
         android:clickable="true"
-        app:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+        app:backgroundTint="@color/colorPrimary"
         app:fabSize="mini"
         app:srcCompat="@drawable/ic_note_add_black_24dp" />
 
