@@ -17,8 +17,10 @@ import dragonapp.com.br.easynotes.dao.NotaDAO;
 public class CadastrarNotaActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static Nota nota=null;
+
     private FloatingActionButton floatingActionButtonSalvarNota;
     private FloatingActionButton floatingActionButtonTelaPrincipal;
+
     public static void chamaTela(Context context, Nota nota) {
         CadastrarNotaActivity.nota = nota;
         Intent intent = new Intent(context, CadastrarNotaActivity.class);
@@ -39,6 +41,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         floatingActionButtonTelaPrincipal = (FloatingActionButton) findViewById(R.id.fabTelaPrincipal);
         floatingActionButtonTelaPrincipal.setOnClickListener(this);
 
+        //Sem este If, o metodo editar nao irar funcionar pois ele ira preencher os campos
         if (nota != null) {
             edtNomedaNota.setText(nota.getNome());
             edtDescricaodaNota.setText(nota.getDescricao());
