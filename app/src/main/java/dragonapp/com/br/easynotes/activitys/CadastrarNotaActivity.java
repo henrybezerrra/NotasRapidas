@@ -16,13 +16,15 @@ import dragonapp.com.br.easynotes.dao.NotaDAO;
 
 public class CadastrarNotaActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static Nota nota;
+    private static Nota nota=null;
     private FloatingActionButton floatingActionButtonSalvarNota;
     private FloatingActionButton floatingActionButtonTelaPrincipal;
     public static void chamaTela(Context context, Nota nota) {
         CadastrarNotaActivity.nota = nota;
         Intent intent = new Intent(context, CadastrarNotaActivity.class);
         context.startActivity(intent);
+
+
     }
 
     @Override
@@ -37,24 +39,28 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         floatingActionButtonTelaPrincipal = (FloatingActionButton) findViewById(R.id.fabTelaPrincipal);
         floatingActionButtonTelaPrincipal.setOnClickListener(this);
 
-
         if (nota != null) {
             edtNomedaNota.setText(nota.getNome());
             edtDescricaodaNota.setText(nota.getDescricao());
         }
 
+
         floatingActionButtonSalvarNota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtNomedaNota.getText().toString().isEmpty()||edtDescricaodaNota.getText().toString().isEmpty()){
+
+                // Se os campos não porem preenchidos, a nota não ira ser salva
+                if(edtNomedaNota.getText().toString().isEmpty()||
+                        edtDescricaodaNota.getText().toString().isEmpty()){
                     Toast.makeText(CadastrarNotaActivity.this, "Preencha todos os campos!",
                             Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                // Se forem preenchidos, ira salvar ou editar
+                else {
                     NotaDAO notaDAO = new NotaDAO(CadastrarNotaActivity.this);
                     if(nota==null) {
                         nota = new Nota();
                     }
-
                     nota.setNome(edtNomedaNota.getText().toString());
                     nota.setDescricao(edtDescricaodaNota.getText().toString());
                     if (nota.getId()==0) {
@@ -64,15 +70,22 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
                     }
                     Toast.makeText(CadastrarNotaActivity.this, "Nota Salva!",
                             Toast.LENGTH_SHORT).show();
+
+                    //limpa os campos
                     edtNomedaNota.setText("");
                     edtDescricaodaNota.setText("");
+                    CadastrarNotaActivity.nota = null;
 
                 }
             }
         });
     }
+
+    //Voltar pra a tela principal
     public void onClick(View v) {
         if (v == floatingActionButtonTelaPrincipal){
+            //Limpar os campos
+            CadastrarNotaActivity.nota = null;
             Intent i = new Intent(this,PrincipalActivity.class);
             startActivity(i);
         }

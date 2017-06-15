@@ -26,7 +26,6 @@ public class NotaDAO extends GenericDAO implements DAO<Nota> {
                         " VALUES(?,?)",
                 new Object[] {nota.getNome(), nota.getDescricao()});
         return false;
-
     }
 
     @Override

@@ -18,8 +18,10 @@ import dragonapp.com.br.easynotes.dao.NotaDAO;
 
 public class PrincipalActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
+
     private ListView lista;
     private FloatingActionButton floatingActionButtonNovaNota;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
             startActivity(i);
         }
     }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
