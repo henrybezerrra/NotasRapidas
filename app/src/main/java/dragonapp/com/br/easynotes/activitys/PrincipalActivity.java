@@ -6,6 +6,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,6 +36,24 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         lista = (ListView) findViewById(R.id.lvLista);
         atualizarListaNota();
         lista.setOnItemClickListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_bar,menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case R.id.iAjuda:
+                startActivity(new Intent(this, AjudaActivity.class));
+                finishAffinity();
+                break;
+            default:break;
+        }
+        return true;
     }
 
     @Override
