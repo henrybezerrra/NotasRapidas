@@ -18,8 +18,8 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
 
     private static Nota nota=null;
 
-    private FloatingActionButton floatingActionButtonSalvarNota;
-    private FloatingActionButton floatingActionButtonTelaPrincipal;
+    private Button buttonSalvarNota;
+    private Button buttonTelaPrincipal;
 
     public static void chamaTela(Context context, Nota nota) {
         CadastrarNotaActivity.nota = nota;
@@ -36,10 +36,9 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
 
         final EditText edtNomedaNota = (EditText) findViewById(R.id.edtNome);
         final EditText edtDescricaodaNota = (EditText) findViewById(R.id.edtDescricao);
-        floatingActionButtonSalvarNota = (FloatingActionButton) findViewById(R.id.fabSalvar);
-        floatingActionButtonSalvarNota.setOnClickListener(this);
-        floatingActionButtonTelaPrincipal = (FloatingActionButton) findViewById(R.id.fabTelaPrincipal);
-        floatingActionButtonTelaPrincipal.setOnClickListener(this);
+        buttonSalvarNota = (Button) findViewById(R.id.btSalvar);
+        buttonTelaPrincipal = (Button) findViewById(R.id.btTelaPrincipal);
+        buttonTelaPrincipal.setOnClickListener(this);
 
         //Sem este If, o metodo editar nao irar funcionar pois ele ira preencher os campos
         if (nota != null) {
@@ -48,7 +47,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         }
 
 
-        floatingActionButtonSalvarNota.setOnClickListener(new View.OnClickListener() {
+        buttonSalvarNota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -86,7 +85,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
 
     //Voltar pra a tela principal
     public void onClick(View v) {
-        if (v == floatingActionButtonTelaPrincipal){
+        if (v == buttonTelaPrincipal){
             //Limpar os campos
             CadastrarNotaActivity.nota = null;
             Intent i = new Intent(this,PrincipalActivity.class);
