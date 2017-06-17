@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="dragonapp.com.br.easynotes.activitys.PrincipalActivity">
 
-    <!-- chama uma outro xml, no caso uma tela de conteudo-->
+
     <!--<android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +23,7 @@
 
     </android.support.design.widget.AppBarLayout>-->
 
+    <!-- chama uma outro xml, no caso uma tela de conteudo-->
 
     <include
         layout="@layout/content_principal"
