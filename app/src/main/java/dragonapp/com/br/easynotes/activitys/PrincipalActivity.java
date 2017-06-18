@@ -60,6 +60,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         return true;
     }
 
+    //Ação ao clica no butao, so caso ele vai pular uma nova activity
     @Override
     public void onClick(View v) {
         if (v == floatingActionButtonNovaNota){
