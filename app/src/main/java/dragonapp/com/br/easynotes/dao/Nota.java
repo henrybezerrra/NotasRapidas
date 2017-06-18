@@ -6,6 +6,7 @@ package dragonapp.com.br.easynotes.dao;
 
 public class Nota {
 
+    //Encapsulamento
     private int id;
     private String nome;
     private String descricao;
@@ -34,6 +35,7 @@ public class Nota {
         this.descricao = descricao;
     }
 
+    //Remover o diretorio de memoria na hora da apresentação na lista e passa a mostrar o nome da nota
     public String toString(){
         return getNome();
     }

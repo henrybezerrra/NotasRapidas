@@ -12,6 +12,7 @@ import java.util.List;
 
 public class NotaDAO extends GenericDAO implements DAO<Nota> {
 
+    //Bibliotenca do Android
     private SQLiteDatabase dataBase;
 
     public NotaDAO(Context context){
@@ -20,6 +21,7 @@ public class NotaDAO extends GenericDAO implements DAO<Nota> {
 
     }
 
+    //Salvar as informações no banco de dados
     @Override
     public boolean salvar(Nota nota) {
         dataBase.execSQL("INSERT INTO nota(nome, descricao)" +
@@ -52,6 +54,7 @@ public class NotaDAO extends GenericDAO implements DAO<Nota> {
         return notas;
     }
 
+    //Apagar a nota do BD
     @Override
     public boolean deletar(int id) {
         dataBase.execSQL("DELETE FROM nota WHERE idnota=?",
@@ -59,6 +62,7 @@ public class NotaDAO extends GenericDAO implements DAO<Nota> {
         return false;
     }
 
+    //Edição dos campos
     @Override
     public boolean atualizar(Nota nota) {
         dataBase.execSQL("UPDATE nota SET nome=?, descricao=?" +

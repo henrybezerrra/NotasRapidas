@@ -11,9 +11,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public abstract class GenericDAO extends SQLiteOpenHelper {
 
-
+    //Nomeção do banco de dados
     private static final String NOME_BANCO = "unileao_manhaNota";
+    //Versão
     private static final int VERSAO = 3;
+    //Linhas de codigo SQL, com nome da tabela sendo nota
     private String sqlTabelaNota = "CREATE TABLE IF NOT EXISTS nota(" +
             "idnota INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nome VARCHAR(45) NOT NULL," +
