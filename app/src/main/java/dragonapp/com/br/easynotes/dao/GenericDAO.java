@@ -40,6 +40,7 @@ public abstract class GenericDAO extends SQLiteOpenHelper {
         db.execSQL(sqlTabelaNota);
     }
 
+    //metodo de atualização da versão BD, entretando, sao esta sendo utilizado
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 

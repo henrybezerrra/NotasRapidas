@@ -12,7 +12,7 @@ import java.util.List;
 
 public class NotaDAO extends GenericDAO implements DAO<Nota> {
 
-    //Bibliotenca do Android
+    //Bibliotenca do Android "SQLiteDatabase"
     private SQLiteDatabase dataBase;
 
     public NotaDAO(Context context){
@@ -24,6 +24,10 @@ public class NotaDAO extends GenericDAO implements DAO<Nota> {
     //Salvar as informações no banco de dados
     @Override
     public boolean salvar(Nota nota) {
+        /*
+        INSERT é uma delcaração SQL que adiciona um ou mais registros
+        em qualquer tabela simples de um banco de dados relacional.
+         */
         dataBase.execSQL("INSERT INTO nota(nome, descricao)" +
                         " VALUES(?,?)",
                 new Object[] {nota.getNome(), nota.getDescricao()});

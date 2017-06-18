@@ -6,10 +6,15 @@ package dragonapp.com.br.easynotes.dao;
 
 public class Nota {
 
-    //Encapsulamento em gets e sets
+    //Declaração de varialeis privadas
     private int id;
     private String nome;
     private String descricao;
+
+    /*
+    Os métodos get e set são responsaveis pelo trafego de dados entre os objetos, são atravez
+    deles que vc obtem ou atribui dados a um determinado Objeto de uma classe qualquer.
+     */
 
     public int getId() {
         return id;
