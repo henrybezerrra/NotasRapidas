@@ -6,7 +6,7 @@ package dragonapp.com.br.easynotes.dao;
 
 public class Nota {
 
-    //Encapsulamento
+    //Encapsulamento em gets e sets
     private int id;
     private String nome;
     private String descricao;
