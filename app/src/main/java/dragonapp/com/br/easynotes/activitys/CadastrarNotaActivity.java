@@ -52,7 +52,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
             edtDescricaodaNota.setText(nota.getDescricao());
         }
 
-
+        //Ação ao clica o botão salvar
         buttonSalvarNota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +71,8 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
                     }
                     nota.setNome(edtNomedaNota.getText().toString());
                     nota.setDescricao(edtDescricaodaNota.getText().toString());
+
+                    //Criando uma nota nota, se o id for 0
                     if (nota.getId()==0) {
                         notaDAO.salvar(nota);
                     }else {
@@ -89,12 +91,14 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         });
     }
 
+    //personalização da bar
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_bar,menu);
         return super.onCreateOptionsMenu(menu);
 
     }
 
+    //Ação ao clica o item do bar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
         switch (item.getItemId()) {
@@ -127,6 +131,7 @@ public class CadastrarNotaActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+    //Ação ao o botao de volta padão do android
     @Override
     public void onBackPressed(){ //Botão BACK padrão do android
         startActivity(new Intent(this, PrincipalActivity.class)); //O efeito ao ser pressionado do botão (no caso abre a activity)
