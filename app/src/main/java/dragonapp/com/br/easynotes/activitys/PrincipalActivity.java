@@ -51,6 +51,10 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
                 startActivity(new Intent(this, AjudaActivity.class));
                 finishAffinity();
                 break;
+            case R.id.iInfo:
+                startActivity(new Intent(this, InfoActivity.class));
+                finishAffinity();
+                break;
             default:break;
         }
         return true;

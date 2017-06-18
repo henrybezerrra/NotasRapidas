@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dragonapp.com.br.easynotes.activitys.InfoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Obrigado por baixar o Easy Notes
+"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="O aplicativo desenvolvido pela Dragon App tem como objetivo ser um aplicativo facil de ultilizar e que não oculpe o minimo de memoria possivel em seu dispositivo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="
+        Equipe de desenvolvimento
+            Dario
+            Huldson
+            Marcondes
+            Murilo Henrique
+            W. Rodrigo
+"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="E-mail para contato: dragonapp@outlook.com"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="
+                   Brasil-Ceara-Cariri"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="
+
+        Todos os direitos reservados a Dragon App SA"/>
+</LinearLayout>
