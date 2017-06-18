@@ -33,7 +33,7 @@ public class NotaDAO extends GenericDAO implements DAO<Nota> {
                 new Object[] {nota.getNome(), nota.getDescricao()});
         return false;
     }
-
+    // Aqui a lista ira ser criada
     @Override
     public List<Nota> listar() {
         Cursor cursor = dataBase.rawQuery("SELECT * FROM nota", null);
