@@ -19,20 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="O aplicativo desenvolvido pela Dragon App tem como objetivo ser um aplicativo facil de ultilizar e que não oculpe o minimo de memoria possivel em seu dispositivo"/>
+        android:text="O aplicativo desenvolvido pela Dragon App tem como objetivo ser um aplicativo facil de ultilizar e que não oculpe o minimo de memoria possivel em seu dispositivo."/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="
-        Equipe de desenvolvimento
-            Dario
-            Huldson
-            Marcondes
-            Murilo Henrique
-            W. Rodrigo
-"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
